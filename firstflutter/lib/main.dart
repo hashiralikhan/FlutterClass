@@ -1,38 +1,28 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore
 import 'package:flutter/material.dart';
-void main(){
-  runApp(MyApp());
-}
+import 'package:firstflutter/app.dart';
 
-class MyApp extends StatelessWidget {
+void main(){
+  runApp(const MyApp());
+  
+  
+  }
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(appBar: AppBar(
-        title: Center(child: Text("Login page")),),
-        body: Center(
-          child: Column(
-            
-            children: [
-              SizedBox(height: 50,),
-              Container(
-                width: 200,
-                child: TextField()),
-                SizedBox(height: 30,),
-                Container(
-                width: 200,
-                child: TextField()),
-                SizedBox(height: 30,),
-                ElevatedButton(onPressed: (){}, child: Text("login"))
-            ],
-          ),
-        ),
-        
-      
+    return  MaterialApp(
+      home: Scaffold(
+        body: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => App(),));
+        }, child: Text("data")),
       ),
-      
     );
   }
 }
