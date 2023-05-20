@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
+import 'package:firstflutter/file.dart';
 import 'package:flutter/material.dart';
-import 'package:firstflutter/app.dart';
 
 void main(){
   runApp(const MyApp());
@@ -19,9 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
-        body: ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => App(),));
-        }, child: Text("data")),
+        body:file(),
       ),
     );
   }

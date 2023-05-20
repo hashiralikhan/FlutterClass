@@ -1,11 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'dart:math';
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:my_loginpage/info.dart';
-import 'package:my_loginpage/login-form.dart';
-
+import 'package:my_loginpage/data.dart';
 void main() {
   runApp(MyApp());
   
@@ -16,8 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: log(),
+        appBar: AppBar(
+          title: Center(child: Text("login page")),
+        ),
+        body: Data(),
       ),
     );
   }
