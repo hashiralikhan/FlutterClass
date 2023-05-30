@@ -24,9 +24,12 @@ class _todoState extends State<todo> {
       ),
       body:
        ListView.builder(
+        
+        
         itemCount: St.length,
         itemBuilder: (context,index){
         return Container(
+          
           height: 50,
           width: 20,
           color: Color.fromARGB(255, 101, 180, 77),
@@ -40,7 +43,7 @@ class _todoState extends State<todo> {
                   GestureDetector(onTap:(){
                      showDialog(context: context, builder: (context){
           return AlertDialog(
-            title: Text("Edit item"),
+            title: Text("Edit item",style: TextStyle(color: Colors.amberAccent),),
             content: TextField(
               onChanged: (value) {
                 output=value;
@@ -76,28 +79,33 @@ class _todoState extends State<todo> {
       }),
 
       floatingActionButton: FloatingActionButton(onPressed: (){
+        
         showDialog(context: context, builder: (context){
           return AlertDialog(
-            title: Text("add item"),
+            backgroundColor: Colors.black,
+
+            title: Text("add item",style: TextStyle(color: Color.fromARGB(122, 255, 140, 64)),),
             content: TextField(
+              style: TextStyle(color: Colors.white),
               onChanged: (value) {
                 output=value;
               },
             ),
             actions: [
               ElevatedButton(onPressed: (){
-                
+                Colors.deepOrangeAccent;
                 setState(() {
                   St.add(output);
                 });
+                
                         Navigator.of(context).pop();
-
-              }, child: Text("add"))
+                
+              }, child: Text("add",style: TextStyle(color: Color.fromARGB(255, 230, 35, 9)),),)
             ],
 
           );
         });
-      },child: Text("add"),),
+      },child: Text("add",style: TextStyle(color: Color.fromARGB(120, 231, 8, 8)),),),
     );
   }
 }
